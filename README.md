@@ -81,7 +81,7 @@ Filled missing values using:
 
 # 🔧 Slide 7: Hyperparameter Tuning
 
-- Used RandomizedSearchCV with 5-fold cross-validation
+- Used RandomizedSearchCV with 10-fold cross-validation
 
 - Tuned key parameters like:
 
