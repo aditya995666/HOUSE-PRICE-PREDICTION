@@ -10,36 +10,60 @@ for acquisition. Furthermore, it aims to unveil the significance of variables th
 
 
 
-🧠 Project Overview
-Objective: Predict the selling price (SalePrice) of residential homes using machine learning regression models.
+# 🎯 Slide 1: Title Slide
 
-Dataset: Train and test CSV files with 80+ features related to house conditions, construction, location, etc.
+- House Price Prediction
 
-Goal: Analyze housing data, clean it, engineer features, build models, tune them, and accurately predict price.
+# 🧠 Slide 2: Project Overview
 
-## ⚙️ Technical Workflow
-# 1. Data Preprocessing
-Handled missing values:
+- Objective: Predict the SalePrice of residential homes using regression.
 
-- Used mean/median/mode to fill nulls
+- Dataset: Train and test CSV files with 80+ features like construction type, size, year, location.
 
-- Dropped columns with too many nulls
+- Goal: Clean, transform, model, tune, and deploy a machine learning solution.
 
-- Converted text-based numbers like "109 min" → 109
+# ⚙️ Slide 3: Data Preprocessing
 
-- Encoded categorical variables using Label Encoding and OneHotEncoding
+Filled missing values using:
 
-- Scaled data using StandardScaler
+- Mean for continuous data
 
-## 2. Feature Engineering
+- Median for skewed numerical columns
+
+- Mode for categorical values
+
+- Dropped columns with excessive nulls
+
+- Converted text-based numerics (e.g., "109 min" → 109)
+
+- Applied Label Encoding & One-Hot Encoding
+
+- Scaled features using MinMaxScaler
+
+# 🧪 Slide 4: Feature Engineering
+
 - Separated numerical and categorical columns
 
-- Removed skewness using PowerTransformer (Yeo-Johnson)
+- Reduced skewness using:
+- 
+- LogtransForm
+  
+- PowerTransformer with 'yeo-johnson' method
 
-- Used SelectFromModel for dimensionality reduction
+- Converted object type columns into numerical values
 
-## 3. Modeling
-Used various regression algorithms:
+
+# ✅ Slide 5: Feature Selection
+
+- Applied SelectFromModel to retain important features
+
+- Threshold set to 'median' feature importance
+
+- Reduced dimensionality and improved model performance
+
+- Feature selection was applied before tuning to enhance efficiency
+
+# 🤖 Slide 6: Regression Models Used
 
 - Linear Regression
 
@@ -53,19 +77,23 @@ Used various regression algorithms:
 
 - XGBoost
 
-- SVR
+- Support Vector Regressor (SVR)
 
-## 4. Hyperparameter Tuning
-Used RandomizedSearchCV to tune:
+# 🔧 Slide 7: Hyperparameter Tuning
 
-- n_estimators, max_depth, min_samples_split
+- Used RandomizedSearchCV with 5-fold cross-validation
 
-- learning_rate, max_features, subsample
+- Tuned key parameters like:
 
-- Tuning done after feature selection to improve performance
+- n_estimators, max_depth, learning_rate
 
-## 5. Model Evaluation
-Metrics used:
+- min_samples_split, subsample, max_features
+
+- Best performance achieved by GradientBoostingRegressor
+
+# 📊 Slide 8: Model Evaluation
+
+Used evaluation metrics:
 
 - R² Score
 
@@ -73,19 +101,20 @@ Metrics used:
 
 - Root Mean Squared Error (RMSE)
 
-- Best models: GradientBoostingRegressor and RandomForestRegressor
+- Gradient Boosting and Random Forest showed highest accuracy
 
--  Saved model using pickle
+- Final R² Score on training data: ~0.92
 
-
-## 🧰 Tools & Libraries
-- Python
-
-- Pandas, NumPy, Matplotlib, Seaborn
-
-- Scikit-learn, XGBoost
+- Final model saved using Pickle
 
 
-## ✅ Results
-Achieved high accuracy (R² ~ 0.92 in training)
+# 🧰 Slide 10: Tools & Libraries
+
+- Language: Python
+
+- Libraries: Pandas, NumPy, Scikit-learn, XGBoost, Matplotlib, Seaborn
+
+- Environment: Jupyter Notebook, VS Code
+
+
 
